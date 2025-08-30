@@ -1,0 +1,10 @@
+# DB connection properties
+src/main/resources/application.properties
+# IntelliJ IDEA files
+.idea
+# GigaIDE files
+.gigaide
+# Artifacts generated during the project build
+target
+# IDEA-like IDE`s files
+*.iml
