@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model model-name="newModel" version="0.0.3">
+  <enum name="OrderStatus">
+    <value name="ASSEMBLY"/>
+    <value name="CANCELED"/>
+    <value name="COMPLETED"/>
+    <value name="DELIVERY"/>
+    <value name="DRAFT"/>
+    <value name="FIXED"/>
+  </enum>
+  <class name="Address" is-abstract="false" is-dictionary="false" embeddable="true">
+    <property name="building" type="STRING" length="254"/>
+    <property name="city" type="STRING" length="254"/>
+    <property name="flatNumber" type="STRING" length="254"/>
+    <property name="street" type="STRING" length="254"/>
+  </class>
+  <class name="Customer" is-abstract="false" is-dictionary="false" embeddable="false" strategy="JOINED">
+    <id category="AUTO_ON_EMPTY"/>
+    <property name="deliveryAddress" type="Address"/>
+    <property name="personalData" type="PersonalData"/>
+  </class>
+  <class name="Darkstore" is-abstract="false" is-dictionary="false" embeddable="false" strategy="JOINED">
+    <id category="AUTO_ON_EMPTY"/>
+    <property name="darkstoreAddress" type="Address"/>
+    <property name="darkstoreListList" type="DarkstoreList" collection="SET" mappedBy="darkstore"/>
+  </class>
+  <class name="DarkstoreList" is-abstract="false" is-dictionary="false" embeddable="false" strategy="JOINED">
+    <id category="AUTO_ON_EMPTY"/>
+    <property name="count" type="INTEGER"/>
+    <property name="darkstore" type="Darkstore" parent="true"/>
+    <reference name="product" type="Product" integrity-check="false"/>
+  </class>
+  <class name="Employee" is-abstract="false" is-dictionary="false" embeddable="false" strategy="JOINED">
+    <id category="AUTO_ON_EMPTY"/>
+    <property name="personalData" type="PersonalData"/>
+    <property name="personalNumber" type="STRING" length="254"/>
+  </class>
+  <class name="Order" is-abstract="false" is-dictionary="false" embeddable="false" strategy="JOINED">
+    <id category="AUTO_ON_EMPTY"/>
+    <property name="comment" type="TEXT"/>
+    <property name="deliveryAddress" type="Address"/>
+    <property name="orderDateTime" type="LOCALDATETIME" length="3"/>
+    <property name="orderListList" type="OrderList" collection="SET" mappedBy="order"/>
+    <property name="status" type="OrderStatus"/>
+    <reference name="collector" type="Employee" integrity-check="false"/>
+    <reference name="courier" type="Employee" integrity-check="false"/>
+    <reference name="customer" type="Customer" integrity-check="false"/>
+  </class>
+  <class name="OrderList" is-abstract="false" is-dictionary="false" embeddable="false" strategy="JOINED">
+    <id category="AUTO_ON_EMPTY"/>
+    <property name="count" type="SHORT"/>
+    <property name="order" type="Order" parent="true"/>
+    <reference name="product" type="Product" integrity-check="false"/>
+  </class>
+  <class name="PersonalData" is-abstract="false" is-dictionary="false" embeddable="true">
+    <property name="firstName" type="STRING" length="254"/>
+    <property name="lastName" type="STRING" length="254"/>
+  </class>
+  <class name="Product" is-abstract="false" is-dictionary="false" embeddable="false" strategy="JOINED">
+    <id category="AUTO_ON_EMPTY"/>
+    <property name="description" type="TEXT"/>
+    <property name="name" type="STRING" length="254"/>
+    <property name="price" type="BIGDECIMAL" length="38" scale="10"/>
+  </class>
+  <layout>
+    <model x="0" y="0"/>
+    <enums>
+      <enum name="OrderStatus">
+        <value name="ASSEMBLY" x="651" y="545"/>
+        <value name="CANCELED" x="651" y="485"/>
+        <value name="COMPLETED" x="651" y="665"/>
+        <value name="DELIVERY" x="651" y="605"/>
+        <value name="DRAFT" x="651" y="365"/>
+        <value name="FIXED" x="651" y="425"/>
+      </enum>
+    </enums>
+    <classes>
+      <class name="PersonalData" x="-240" y="55">
+        <property name="firstName" x="-239" y="114"/>
+        <property name="lastName" x="-239" y="54"/>
+      </class>
+      <class name="Customer">
+        <property name="deliveryAddress" x="221" y="144"/>
+        <property name="personalData" x="221" y="84"/>
+      </class>
+      <class name="Darkstore">
+        <property name="darkstoreAddress" x="1185" y="237"/>
+        <property name="darkstoreListList" x="1185" y="297"/>
+      </class>
+      <class name="Employee">
+        <property name="personalNumber" x="-239" y="751"/>
+        <property name="personalData" x="-239" y="691"/>
+      </class>
+      <class name="OrderList">
+        <property name="count" x="224" y="1047"/>
+        <property name="order" x="224" y="927"/>
+        <reference name="product" x="224" y="987"/>
+      </class>
+      <class name="Address" x="531" y="50">
+        <property name="city" x="672" y="33"/>
+        <property name="flatNumber" x="672" y="213"/>
+        <property name="street" x="672" y="93"/>
+        <property name="building" x="672" y="153"/>
+      </class>
+      <class name="Order">
+        <property name="orderDateTime" x="223" y="541"/>
+        <property name="orderListList" x="223" y="781"/>
+        <property name="comment" x="223" y="481"/>
+        <property name="deliveryAddress" x="223" y="421"/>
+        <property name="status" x="223" y="601"/>
+        <reference name="collector" x="223" y="661"/>
+        <reference name="courier" x="223" y="721"/>
+        <reference name="customer" x="223" y="361"/>
+      </class>
+      <class name="Product">
+        <property name="description" x="689" y="1026"/>
+        <property name="name" x="689" y="966"/>
+        <property name="price" x="689" y="1086"/>
+      </class>
+      <class name="DarkstoreList">
+        <property name="count" x="1185" y="520"/>
+        <property name="darkstore" x="1185" y="460"/>
+        <reference name="product" x="1185" y="580"/>
+      </class>
+    </classes>
+  </layout>
+</model>

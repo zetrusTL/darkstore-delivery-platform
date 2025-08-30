@@ -1,0 +1,245 @@
+mutation {
+    p1:packet {
+    createDarkstore(input: {
+      	id: "1"
+        darkstoreAddress: {
+          city: "Мурманск"
+          street: "Полярные зори"
+          building:""
+          flatNumber:"34"
+        }
+    }) {
+      id
+    }
+  }
+  
+    p2:packet {
+     createDarkstore(input: {
+      	id: "2"
+        darkstoreAddress: {
+          city: "Москва"
+          street: "Ленина"
+          building: "5"
+          flatNumber: "76"
+        }
+    }) {
+      id
+    }
+  }
+  
+    p3:packet {
+    createDarkstore(input: {
+      	id: "3"
+        darkstoreAddress: {
+          city: "Санкт-Петербург"
+          street: "Уральская"
+          building: "М"
+          flatNumber: "1"
+        }
+    }) {
+      id
+    }
+  }
+  
+  p4:packet {
+    createEmployee(input: {
+      id: "1"
+      personalData: {
+        firstName: "Иван"
+        lastName: "Иванов"
+      }
+      personalNumber: "1"
+    }) {
+      id
+    }
+  }
+  
+  p5:packet {
+    createEmployee(input: {
+      id: "2"
+      personalData: {
+        firstName: "Максим"
+        lastName: "Максимов"
+      }
+      personalNumber: "2"
+    }) {
+      id
+    }
+  }
+  
+  p6: packet {
+    createProduct(input: {
+      id: "1"
+      name: "Суп 'Том-Ям'"
+      price: 399.90
+      description: "Кисло-острый суп с креветками, курицей, рыбой или другими морепродуктами. Национальное блюдо Лаоса и Таиланда. Также употребляется в соседних странах: Малайзии, Сингапуре и Индонезии.В соседних странах, таких как Сингапур, Малайзия и Индонезия, а также в ресторанах по всему миру, название «том ям» широко используется для обозначения различных тайских острых супов, которые могут сильно отличаться от оригинала, из-за чего часто возникает путаница."
+    }) {
+      id
+    }
+  }
+  
+  p7: packet {
+    createProduct(input: {
+      id: "2"
+      name: "Пицца 'Пепперони'"
+      price: 424.35
+      description: "Наивкуснейшее простое блюдо для всей семьи на ужин и перекус. Классическая пицца Пепперони готовится просто и без проблем. Для начинки в ней используются только два продукта: сыр и колбаса. Соусы к пицце могут быть любые на ваш вкус. А еще пиццу можно заготавливать впрок и печь вынимая из морозилки. Удобно правда?"
+    }) {
+      id
+    }
+  }
+  
+  p8: packet {
+    createProduct(input: {
+      id: "3"
+      name: "Цыплёнок табака"
+      price: 278.00
+      description: "Удивительно мягкий, ароматный и пряный. Никто не сможет устоять! Цыплёнок табака в духовке станет украшением любого стола. Это не только очень эффектное и красивое блюдо в подаче, но и очень вкусное. Мясо курицы, приготовленное таким способом, получается очень нежным с румяной хрустящей корочкой снаружи."
+    }) {
+      id
+    }
+  }
+  
+  p9: packet {
+    createProduct(input: {
+      id: "4"
+      name: "Запеченая горбуша с картофелем"
+      price: 322.00
+      description: "Наивкуснейшая, на второе, на праздник и на каждый день! Горбуша в духовке сочная с картошкой получается невероятной - за счет запекания в фольге и добавления сметаны и овощей. Это полноценное блюдо, сразу с готовым гарниром, которое подходит для подачи в будни и праздники."
+    }) {
+      id
+    }
+  }
+  
+    p10: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "1"
+      }
+    	darkstore: "1"
+      count: 25
+    }) {
+      id
+    }
+  }
+  
+  p11: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "2"
+      }
+    	darkstore: "1"
+      count: 46
+    }) {
+      id
+    }
+  }
+  
+	p12: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "3"
+      }
+    	darkstore: "1"
+      count: 11
+    }) {
+      id
+    }
+  }
+  
+  p13: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "4"
+      }
+    	darkstore: "1"
+      count: 21
+    }) {
+      id
+    }
+  }
+  
+  p14: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "1"
+      }
+    	darkstore: "2"
+      count: 13
+    }) {
+      id
+    }
+  }
+  
+  p15: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "2"
+      }
+    	darkstore: "2"
+      count: 25
+    }) {
+      id
+    }
+  }
+  
+	p16: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "3"
+      }
+    	darkstore: "2"
+      count: 36
+    }) {
+      id
+    }
+  }
+  
+  p17: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "4"
+      }
+    	darkstore: "2"
+      count: 47
+    }) {
+      id
+    }
+  }
+  
+  p18: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "1"
+      }
+    	darkstore: "3"
+      count: 29
+    }) {
+      id
+    }
+  }
+  
+  p19: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "2"
+      }
+    	darkstore: "3"
+      count: 32
+    }) {
+      id
+    }
+  }
+  
+  p20: packet {
+    createDarkstoreList(input: {
+      product: {
+        entityId: "3"
+      }
+    	darkstore: "3"
+      count: 56
+    }) {
+      id
+    }
+  }
+}
