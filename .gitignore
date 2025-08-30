@@ -1,0 +1,115 @@
+### Общие системные и редакторские файлы ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swn
+*.swo
+*.swp
+*~
+*.bak
+*.tmp
+*.temp
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+### Логи и дампы ###
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+logs
+*.log.*
+log/
+*.min.js
+*.min.css
+
+### Файлы окружения ###
+# Никогда не коммитьте файлы с паролями и ключами!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.prod
+.env.stage
+.env.credentials
+application.properties
+application-dev.properties
+application-prod.properties
+
+### Java ###
+# Файлы компиляции
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Директории сборки
+/target/
+/target/**
+/build/
+/build/**
+/out/
+/bin/
+
+# Файлы Maven (логи, проверки)
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+### Node.js / React ###
+# Директория с зависимостями
+node_modules/
+/node_modules
+*/node_modules/*
+/node_modules/*
+/.npm
+
+# Файлы сборки
+/dist/
+/build/
+/.next/
+/.nuxt/
+
+# Кэш npm/yarn
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output
+
+# ESLint cache
+.eslintcache
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+### Базы данных ###
+# Локальные файлы БД (например, H2)
+*.db
+*.h2.db
+*.mv.db
+*.sqlite
